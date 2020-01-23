@@ -8,9 +8,7 @@ const data = require('./dane');
 let owce = data.getOwce();
 console.log(owce);
 
-app.get('/', function (req, res) {
-  res.send('owca taboret')
-})
+
 
 app.get('/owce', function (req, res) {
   res.json(owce);
@@ -44,5 +42,7 @@ app.patch('/owce/:ID', function (req,res){
   if(typeof req.body.broken !== "undefined") owca.broken = req.body.broken;
   res.json(owca);
 })
+
+app.use( express.static('static') )
 
 app.listen(8080, () => console.log(`Example app listening on port ${8080}!`))
