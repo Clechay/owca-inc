@@ -39,7 +39,6 @@ function save() {
 		owce: owce,
 		miejsca: miejsca,
 	};
-	console.log(file);
 	fs.writeJSONSync(dataPath,file);
 }
 const getOwce = ()=>owce;
