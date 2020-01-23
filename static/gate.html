@@ -38,7 +38,15 @@
 		async function send(e) {
 			const id = document.querySelector("#owcaID").value;
 			const location = document.querySelector("#newLocation").value;
-			
+			fetch(`/owce/${id}`, {
+				body: JSON.stringify({
+					location
+				}),
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				method:"PATCH"
+			})
 		}
 
 		const btn = document.querySelector("#changeLocation");
