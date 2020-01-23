@@ -39,6 +39,9 @@ app.delete('/owce/:ID', function (req, res) {
 app.patch('/owce/:ID', function (req,res){
   const owca = owce.find(owca => owca.ID == req.params.ID)
   if(typeof req.body.Age !== "undefined") owca.Age = req.body.Age;
+  if(typeof req.body.location !== "undefined") owca.location = req.body.location;
+  if(typeof req.body.needsShaving !== "undefined") owca.needsShaving = req.body.needsShaving;
+  if(typeof req.body.broken !== "undefined") owca.broken = req.body.broken;
   res.json(owca);
 })
 
